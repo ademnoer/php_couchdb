@@ -1,25 +1,24 @@
 <?php
 
+session_start();
 include_once("models/User.php");
+include_once ("controllers/LoginClass.php");
+include_once ("controllers/siteConfig.php");
 
 
-if (isset($_POST['submit'])) {
+// login with post
+if (isset($_POST['username'])) {
+    echo "loginWithPost";
+    LoginClass::loginWithPost();
     
-    if ( isset($_POST['username']) && isset($_POST['password']) ) {
-        $user = new User($_POST['username']);
-
-        if (isset($user->id)) {
-            header("Location: dashboard.php");
-        }else{
-            echo "usernotfound";
-        }
-    }
     
+// login with Session    
+} elseif (isset($_SESSION['login'])) {
+    LoginClass::loginWithSession();
+    
+    
+// in not loged, show login page
 }
-
-if (isset($_SESSION['login'])){
-
-}
-
+$_SESSION["capcha"] = "123123";
 include_once("views/login_form.php");
-
+    

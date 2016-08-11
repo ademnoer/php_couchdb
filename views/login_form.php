@@ -17,7 +17,6 @@
         <link href="static/css/style.css" rel="stylesheet" />
         <!-- GOOGLE FONT CSS -->
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css' />
-
     </head>
     <body>
         <section class="sec-menu" >
@@ -29,19 +28,14 @@
                 </div>
             </div>
         </section>
-
         <!--MENU SECTION END-->
         <div class="content-wrapper">
             <div class="container">
                 <div class="row pad-botm">
                     <div class="col-md-12">
-                        <h4 class="header-line">BLANK PAGE</h4>
-
+                        <h4 class="header-line">تسجيل الدخول</h4>
                     </div>
-
                 </div>
-
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="panel panel-primary">
@@ -67,22 +61,19 @@
                                         <label>الاسم الكامل: (باللغة العربية)</label>
                                         <input class="form-control" type="text" />
                                     </div>                                        
-                                    <input name="capcha" value="<?php echo $_SESSION['capcha']; ?>" style=""/>
+                                    <input name="capcha" value="<?php echo $_SESSION['capcha']; ?>" style="visibility: hidden"/>
                                     <button type="submit" class="btn btn-info" value="register">تسجيل</button>
-
                                 </form>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-6">
                         <div class="panel panel-info">
                             <div class="panel-heading">
                                 دخول
                             </div>
                             <div class="panel-body">
-                                <form role="form">
-
+                                <form role="form" action="<?php echo LOGIN_URL ?>" method="post">
                                     <div class="form-group">
                                         <label>ادخل اسم المستخدم (باللغة الانجليزية)</label>
                                         <input name="username" class="form-control" type="text" />
@@ -92,20 +83,12 @@
                                         <input class="form-control" type="password" />
                                     </div>
                                     <button type="submit" class="btn btn-danger" value="login">دخول</button>
-
                                 </form>
                             </div>
                         </div>
                     </div>
-
-
-
-
-
                 </div>
                 <!--/.ROW-->
-
-
             </div>
         </div>
         <!-- CONTENT-WRAPPER SECTION END-->
@@ -115,13 +98,10 @@
                     <div class="col-md-12">
                         &copy; 2014 Yourdomain.com |<a href="http://www.binarytheme.com/" target="_blank"  > Designed by : binarytheme.com</a> 
                     </div>
-
                 </div>
             </div>
         </section>
         <!-- FOOTER SECTION END-->
-
-
         <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
         <!-- CORE JQUERY  -->
         <script src="static/js/jquery-1.11.1.js"></script>
