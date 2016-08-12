@@ -35,6 +35,11 @@
                     <div class="col-md-12">
                         <h4 class="header-line">تسجيل الدخول</h4>
                     </div>
+                    <?php
+                    if (isset($errorMassage)) {
+                        echo '<div class="col-md-12"><h4 class="header-line">'.$errorMassage.'</h4></div>';
+                    }
+                    ?>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -80,8 +85,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label>كلمة السر</label>
-                                        <input class="form-control" type="password" />
+                                        <input name="password" class="form-control" type="password" />
                                     </div>
+                                    <input name="submit" value="login" style="visibility: hidden"/>
                                     <button type="submit" class="btn btn-danger" value="login">دخول</button>
                                 </form>
                             </div>
