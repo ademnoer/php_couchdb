@@ -1,22 +1,20 @@
 <?php
 
 session_start();
-require_once("models/User.php");
-require_once ("controllers/LoginClass.php");
+require_once ("models/User.php");
 require_once ("config/siteConfig.php");
-require_once ("config/trans_".lANGUAGE.".php");
+require_once ("commonFunctions.php");
 
-
-
-if (isset($_POST['submit'])) {
-        $errorMassage = LoginWithPOST();
-    
-    
-} elseif (isset($_SESSION['login'])) {
+if ($_SERVER['REQUEST_METHOD']=='POST'){
+        include_once ('login/LoginWithPost.php');
+        var_dump($_SESSION);
+        exit(0);
 }
 
 
+#once the login page opened, user must login again 
 
-$_SESSION["capcha"] = "123123";
-include_once("views/login_form.php");
+$_SESSION["user"] = NULL;
+$_SESSION["capcha"] = generateCapcha();
+include_once ("views/login.php");
 
