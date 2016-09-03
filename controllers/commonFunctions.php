@@ -21,3 +21,6 @@ function checkLogin() {
     }
     return header("Location: ".LOGIN_URL);
 }
+function logUser($param) {
+    
+}

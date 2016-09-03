@@ -7,14 +7,16 @@ require_once ("commonFunctions.php");
 
 if ($_SERVER['REQUEST_METHOD']=='POST'){
         include_once ('login/LoginWithPost.php');
-        var_dump($_SESSION);
-        exit(0);
+
+}
+
+if (isset($_GET["logout"])){
+    include ("login/logout.php");
 }
 
 
 #once the login page opened, user must login again 
 
-$_SESSION["user"] = NULL;
 $_SESSION["capcha"] = generateCapcha();
 include_once ("views/login.php");
 

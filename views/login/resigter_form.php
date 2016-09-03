@@ -1,21 +1,26 @@
-<form role="form">
-    <div class="form-group">
-        <label>اسم المستخدم (باللغة الانجليزية)</label>
-        <p class="help-block">سوف تستخدم هذا الاسم للدخول الى حسابك فقط</p>
-        <input class="form-control" type="text" />
+<form action="<?php echo LOGIN_URL ?>" method="post">
+    <div class="form-group has-feedback">
+        <input required name="username" type="text" class="form-control" placeholder="<?php echo REGISTER_FORM_USERNAME ?>">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
     </div>
-    <div class="form-group">
-        <label>كلمة السر (يجب ان تكون 4 احرف على الاقل)</label>
-        <input class="form-control" type="password" />
+    <div class="form-group has-feedback">
+        <input required name="password" type="password" class="form-control" placeholder="<?php echo REGISTER_FORM_PASSWORD ?>">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
     </div>
-    <div class="form-group">
-        <label>قم باعادة كتابة كلمة السر مرة أخرى</label>
-        <input class="form-control" type="password" />
+    <div class="form-group has-feedback">
+        <input required name="repassword" type="password" class="form-control" placeholder="<?php echo REGISTER_FORM_REPASSWORD ?>">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
     </div>
-    <div class="form-group">
-        <label>الاسم الكامل: (باللغة العربية)</label>
-        <input class="form-control" type="text" />
-    </div>                                        
-    <input name="capcha" value="<?php echo $_SESSION['capcha']; ?>" style="visibility: hidden"/>
-    <button type="submit" class="btn btn-info" value="register">تسجيل</button>
+    <div class="form-group has-feedback">
+        <input required name="fullname" type="text" class="form-control" placeholder="<?php echo REGISTER_FORM_FULLNAME ?>">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+    </div>
+    <input name="capcha" type="hidden" value="<?php echo $_SESSION["capcha"] ?>">
+    <input name="submit" type="hidden" value="register">
+    <div class="row">
+        <div class="col-xs-12">
+            <button type="submit" value="login" class="btn btn-success btn-block btn-flat"><?php echo REGISTER_FORM_BUTTON ?></button>
+            <br><p><?php echo REGISTER_FORM_AGREEMENT ?></p>
+        </div>
+    </div>
 </form>
