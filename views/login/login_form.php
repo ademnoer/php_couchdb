@@ -8,7 +8,7 @@
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
     </div>
     <input name="capcha" type="hidden" value="<?php echo $_SESSION["capcha"] ?>">
-    <input name="submit" type="hidden" value="login">
+    <input name="login" type="hidden" value="login">
     <div class="row">
         <div class="col-xs-12">
             <button type="submit" value="login" class="btn btn-primary btn-block btn-flat"><?php echo LOGIN_FORM_BUTTON ?></button>

@@ -1,5 +1,5 @@
 <?php
 
-include_once ("controllers/dashboard.php");
+include_once ("./controllers/dashboardController.php");
 
 ?>

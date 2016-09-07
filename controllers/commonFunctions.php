@@ -10,17 +10,22 @@ function generateCapcha($length = 10) {
     return $randomString;
 }
 
+function checkCapcha() {
+    if ($_POST["capcha"] != $_SESSION["capcha"]) {
+        die("invaled capcha !!");
+    }
+}
+
 function cleanString($string) {
-    $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-    return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+    $string = trim($string);
+    $string = stripslashes($string);
+    $string = htmlspecialchars($string);
+    return $string;
 }
 
 function checkLogin() {
     if (isset($_SESSION["user"])) {
-        return TRUE;    
+        return TRUE;
     }
-    return header("Location: ".LOGIN_URL);
-}
-function logUser($param) {
-    
+    return FALSE;
 }

@@ -1,6 +1,5 @@
 <?php
 
-require_once("controllers/login.php");
-
+require_once("controllers/loginController.php");
 
 ?>

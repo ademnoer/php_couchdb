@@ -10,8 +10,8 @@
                 <div class="login-box-body">
                     <p class="login-box-msg"><?php echo LOGIN_MASSEGE ?></p>
                     <?php
-                    if (isset($loginErrorMassage)) {
-                        echo '<div class="login-box-msg"><p style="color: red;" >' . $loginErrorMassage . '</p></div>';
+                    if (isset($login)) {
+                        echo '<div class="login-box-msg"><p style="color: red;" >' . $login->error . '</p></div>';
                     }
                     ?>
                     <?php include_once ("views/login/login_form.php"); ?>
@@ -28,8 +28,8 @@
                 <div class="login-box-body">
                     <p class="login-box-msg"><?php echo REGISTER_MASSEGE ?></p>
                     <?php
-                    if (isset($loginErrorMassage)) {
-                        echo '<div class="login-box-msg"><p style="color: red;" >' . $loginErrorMassage . '</p></div>';
+                    if (isset($register)) {
+                        echo '<div class="login-box-msg"><p style="color: red;" >' . $register->error . '</p></div>';
                     }
                     ?>
                     <?php include_once ("views/login/resigter_form.php"); ?>

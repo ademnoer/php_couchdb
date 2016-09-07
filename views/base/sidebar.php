@@ -5,7 +5,7 @@
                 <img src="<?php echo STATIC_URL ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-right info">
-                <p><?php echo $user->id; ?></p>
+                <p><?php echo $user->fullname; ?></p>
                 <a href="#"><span>متصل</span><i class="fa fa-circle text-success"></i></a>
             </div>
         </div>

@@ -9,7 +9,7 @@
                 <div class="row">
 
 <?php
-foreach ($courses as $course) { 
+foreach ($courses as $course) {
     include ("views/course/courses.php");
 }
 ?>
